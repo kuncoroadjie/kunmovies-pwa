@@ -61,8 +61,10 @@ const createMovieItemTemplate = (movie) => `
       <div class="movie-item__header__rating" style="background-color: ${getColor(movie.vote_average)}">
         <span class="movie-item__header__rating__score">${movie.vote_average.toFixed(1)}</span>
       </div>
-      <img class="movie-item__header__poster" alt="${movie.title}"
+      <a href="/#/detail/${movie.id}">
+        <img class="movie-item__header__poster" alt="${movie.title}"
            src="${movie.poster_path ? CONFIG.BASE_W500_IMAGE_URL + movie.poster_path : 'https://i.ibb.co/S0N5njf/no-poster.png'}">
+      </a>
     </div>
     <div class="movie-item__content">
       <h3><a href="/#/detail/${movie.id}">${movie.title}</a></h3>
