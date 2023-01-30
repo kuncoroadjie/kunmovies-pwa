@@ -97,6 +97,17 @@
   main {
     flex: 1;
   }
+
+  .content {
+    padding: 28px;
+    margin: 0 auto;
+    min-height: 100%;
+  }
+   
+  .content .content__heading {
+    font-weight: 400;
+    color: var(--tosca);
+  }
   
   /*
     Footer
