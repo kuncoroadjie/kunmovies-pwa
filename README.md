@@ -1,0 +1,2 @@
+# KunMovies App
+KunMovies is a website that allows users to browse and discover a wide variety of movies. Users can also search for movies by genre, actor, director, and other criteria. Overall, a movie catalog website is a great resource for movie enthusiasts to find new films to watch and keep track of their favorites.
