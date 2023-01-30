@@ -1,6 +1,6 @@
 import UrlParser from '../../routes/url-parser';
 import TheMovieDbSource from '../../data/tmdb-source';
-import { createMovieDetailTemplate } from '../templates/template-creator';
+import { createMovieDetailTemplate, createLikeButtonTemplate } from '../templates/template-creator';
 
 const Detail = {
   async render() {
@@ -15,7 +15,10 @@ const Detail = {
     const movie = await TheMovieDbSource.detailMovie(url.id);
     const cast = await TheMovieDbSource.castMovie(url.id);
     const movieContainer = document.querySelector('#movie');
+    const likeButtonContainer = document.querySelector('#likeButtonContainer');
+
     movieContainer.innerHTML = createMovieDetailTemplate(movie, cast);
+    likeButtonContainer.innerHTML = createLikeButtonTemplate();
   },
 };
 

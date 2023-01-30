@@ -317,6 +317,26 @@ Scroll Bar
   background: #b30000; 
 }
 
+.like {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 10px #dc2e2b;
+}
+
 /*
   Footer
 */

@@ -21,6 +21,13 @@ const getColor = (vote) => {
   return 0;
 };
 
+const movieFavoriteEmpty = () => `
+  <div class="movie__status-empty">
+    <img src='./img/fav-empty.png' alt="empty fav movies" />
+    <p>Your liked movies is empty</p>
+  </div>
+`;
+
 const createMovieDetailTemplate = (movie, cast) => `
   <div class="movie__backdrop" style="background-image: url(${CONFIG.BASE_ORIGINAL_IMAGE_URL + movie.backdrop_path})">
     <div class="movie__backdrop-overlay">
@@ -64,7 +71,22 @@ const createMovieItemTemplate = (movie) => `
   </div>
 `;
 
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this movie" id="likeButton" class="like">
+     <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
+
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this movie" id="likeButton" class="like">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
+
 export {
   createMovieItemTemplate,
   createMovieDetailTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
+  movieFavoriteEmpty,
 };
