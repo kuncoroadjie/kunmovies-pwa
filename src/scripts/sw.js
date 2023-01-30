@@ -1,13 +1,30 @@
+import 'regenerator-runtime';
+import CacheHelper from './utils/cache-helper';
+
+const assetsToCache = [
+  './',
+  './icons/maskable_icon.png',
+  './icons/maskable_icon_x36.png',
+  './icons/maskable_icon_x48.png',
+  './icons/maskable_icon_x72.png',
+  './icons/maskable_icon_x96.png',
+  './icons/maskable_icon_x144.png',
+  './icons/maskable_icon_x192.png',
+  './index.html',
+  './favicon.png',
+  './app.bundle.js',
+  './app.webmanifest',
+  './sw.bundle.js',
+];
+
 self.addEventListener('install', (event) => {
-  console.log('Installing Service Worker ...');
+  event.waitUntil(CacheHelper.cachingAppShell([...assetsToCache]));
 });
 
 self.addEventListener('activate', (event) => {
-  console.log('Activating Service Worker ...');
+  event.waitUntil(CacheHelper.deleteOldCache());
 });
 
 self.addEventListener('fetch', (event) => {
-  console.log(event.request);
-
-  event.respondWith(fetch(event.request));
+  event.respondWith(CacheHelper.revalidateCache(event.request));
 });
