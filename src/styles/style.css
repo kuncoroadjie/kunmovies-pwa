@@ -1,0 +1,136 @@
+:root {
+    --primary: #FE4543;
+    --blue: #1A2457;
+    --green: #53B99E;
+    --yellow: #FFCD4D;
+    --tosca: #4DF4FF;
+    --white: #EFF1F6;
+    --gray: #8d9098;
+    --purple: #47408C;
+  
+  }
+  
+  * {
+      padding: 0;
+      margin: 0;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: rgb(68,94,141);
+    background: linear-gradient(120deg, rgba(68,94,141,1) 0%, rgba(109,84,140,1) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+   
+   
+  /*
+    AppBar
+  */
+   
+  .app-bar {
+    padding: 8px 16px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    background-color: var(--blue);
+  }
+   
+  .app-bar .app-bar__menu {
+    display: flex;
+    align-items: center;
+  }
+   
+  .app-bar .app-bar__menu button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 8px;
+    cursor: pointer;
+  }
+   
+  .app-bar .app-bar__brand {
+    display: flex;
+    align-items: center;
+  }
+   
+  .app-bar .app-bar__brand img{
+    height: 50px;
+    user-select: none;
+  }
+   
+  .app-bar .app-bar__navigation {
+    position: absolute;
+    top: 67px;
+    left: -180px;
+    width: 150px ;
+    transition: all 0.3s;
+    padding: 8px;
+    overflow: hidden;
+  }
+   
+  .app-bar .app-bar__navigation.open {
+    left: 0;
+    background-color: #47408C;
+  }
+   
+  .app-bar .app-bar__navigation ul li a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: white;
+    padding: 8px;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+  
+  
+  /*
+    Main Content
+  */
+  main {
+    flex: 1;
+  }
+  
+  /*
+    Footer
+  */
+   
+  footer {
+    padding: 16px;
+    background-color: var(--blue);
+  }
+  
+  footer #footerTools {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  footer p {
+    margin-top: 16px;
+    text-align: center;
+    color: #aaaaaa;
+  }
+   
+  footer p a {
+    color: var(--tosca);
+    text-decoration: none;
+  }
+  
+  .footer__brand{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .footer__brand img{
+    height: 50px;
+    user-select: none;
+  }

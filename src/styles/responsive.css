@@ -1,0 +1,50 @@
+@media screen and (min-width: 650px) {
+    body{
+      background: rgb(68,94,141);
+      background: linear-gradient(120deg, rgba(68,94,141,1) 0%, rgba(75,68,142,1) 50%, rgba(109,84,140,1) 100%);
+    }
+
+    .content {
+      padding: 32px 80px;
+    }
+
+    .app-bar {
+      grid-template-columns: 1fr auto;
+      padding: 8px 80px;
+    }
+   
+    .app-bar .app-bar__brand h1 {
+      font-size: 1.5em;
+    }
+   
+    .app-bar .app-bar__menu {
+      display: none;
+    }
+   
+    .app-bar .app-bar__navigation {
+      position: static;
+      width: 100%;
+    }
+   
+    .app-bar .app-bar__navigation ul li {
+      display: inline-block;
+    }
+   
+    .app-bar .app-bar__navigation ul li a {
+      display: inline-block;
+      width: 120px;
+      text-align: center;
+      margin: 0;
+    }
+
+    footer #footerTools {
+      flex-direction: row;
+    }
+  }
+   
+  @media screen and (min-width: 800px) {
+    .app-bar .app-bar__brand h1 {
+      font-size: 2em;
+    }
+    
+  }
