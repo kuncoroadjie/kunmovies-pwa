@@ -17,6 +17,11 @@ class TheMovieDbSource {
     const response = await fetch(API_ENDPOINT.DETAIL(id));
     return response.json();
   }
+
+  static async castMovie(id) {
+    const response = await fetch(API_ENDPOINT.CAST(id));
+    return response.json();
+  }
 }
 
 export default TheMovieDbSource;

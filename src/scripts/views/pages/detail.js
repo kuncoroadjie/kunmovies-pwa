@@ -1,17 +1,21 @@
 import UrlParser from '../../routes/url-parser';
 import TheMovieDbSource from '../../data/tmdb-source';
+import { createMovieDetailTemplate } from '../templates/template-creator';
 
 const Detail = {
   async render() {
     return `
-      <h2>Detail Page</h2>
+      <div id="movie"></div>
+      <div id="likeButtonContainer"></div>
     `;
   },
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const movie = await TheMovieDbSource.detailMovie(url.id);
-    console.log(movie);
+    const cast = await TheMovieDbSource.castMovie(url.id);
+    const movieContainer = document.querySelector('#movie');
+    movieContainer.innerHTML = createMovieDetailTemplate(movie, cast);
   },
 };
 
